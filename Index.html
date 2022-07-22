@@ -1,0 +1,21 @@
+
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <button onclick="GetAllProdutos()">Buscar todos</button>
+    <script>
+        function GetAllProdutos() {
+                $.ajax({
+                    url: 'https://localhost:5001/api/todos',
+                    type: 'GET',
+                    data: '',
+                    headers: {"Access-Control-Allow-Origin" : '*'},
+                    error: function (result) {
+                        alert('Error: ' + result.statusText);
+                    },
+                    success: function (result) {
+                        console.log(result.data);
+                    },
+                });
+            }
+        </script>
+</html>
